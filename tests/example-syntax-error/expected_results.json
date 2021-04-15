@@ -1,5 +1,5 @@
 {
   "version": 1,
   "status": "fail",
-  "output": "TODO: replace with correct output"
+  "output": "Loading /solution/example-syntax-error.el (source)...\nSymbol's value as variable is void: DEF&*@"
 }

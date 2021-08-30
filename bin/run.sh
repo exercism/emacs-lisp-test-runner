@@ -41,7 +41,7 @@ exit_code=$?
 
 popd > /dev/null
 
-# Write the results.json file based on the exit code of the command that was 
+# Write the results.json file based on the exit code of the command that was
 # just executed that tested the implementation file
 if [ $exit_code -eq 0 ]; then
     jq -n '{version: 1, status: "pass"}' > ${results_file}
@@ -51,7 +51,7 @@ else
          | GREP_COLOR='01;31' grep --color=always -E -e 'FAILED.*$|$' \
          | GREP_COLOR='01;32' grep --color=always -E -e 'passed.*$|$')
 
-    jq -n --arg output "${colorized_test_output}" '{version: 1, status: "fail", output: $output}' > ${results_file}
+    jq -n --arg output "${colorized_test_output}" '{version: 1, status: "fail", message: $output}' > ${results_file}
 fi
 
 echo "${slug}: done"

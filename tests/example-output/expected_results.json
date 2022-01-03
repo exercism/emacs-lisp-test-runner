@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "status": "pass",
+  "message": null,
+  "tests": [
+    {
+      "name": "vanilla-leap-year",
+      "test_code": "(should (leap-year-p 1996))",
+      "status": "pass",
+      "message": null,
+      "output": "\"Hello from stdout. It is 1996 now\"\n\nHello from stderr\n\n\"       (__)\n `------(oo)\n  ||    (__)\n  ||w--||\"\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lectus. Suspendisse dignissim molestie sagittis. Praesent egestas massa a est maximus iaculis. Morbi varius nulla in purus hendrerit, eget tincidunt diam malesuada. Morbi convallis non ex eget auctor. Aenean massa tellus, maximus a fermentum non, tempor quis sem. Integer finibus tincidunt convallis. Curabitur d"
+    },
+    {
+      "name": "any-old-year",
+      "test_code": "(should-not (leap-year-p 1997))",
+      "status": "pass",
+      "message": null,
+      "output": "\"Hello from stdout. It is 1997 now\"\n\nHello from stderr\n\n\"       (__)\n `------(oo)\n  ||    (__)\n  ||w--||\"\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lectus. Suspendisse dignissim molestie sagittis. Praesent egestas massa a est maximus iaculis. Morbi varius nulla in purus hendrerit, eget tincidunt diam malesuada. Morbi convallis non ex eget auctor. Aenean massa tellus, maximus a fermentum non, tempor quis sem. Integer finibus tincidunt convallis. Curabitur d"
+    },
+    {
+      "name": "non-leap-even-year",
+      "test_code": "(should-not (leap-year-p 1997))",
+      "status": "pass",
+      "message": null,
+      "output": "\"Hello from stdout. It is 1997 now\"\n\nHello from stderr\n\n\"       (__)\n `------(oo)\n  ||    (__)\n  ||w--||\"\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lectus. Suspendisse dignissim molestie sagittis. Praesent egestas massa a est maximus iaculis. Morbi varius nulla in purus hendrerit, eget tincidunt diam malesuada. Morbi convallis non ex eget auctor. Aenean massa tellus, maximus a fermentum non, tempor quis sem. Integer finibus tincidunt convallis. Curabitur d"
+    },
+    {
+      "name": "century",
+      "test_code": "(should-not (leap-year-p 1900))",
+      "status": "pass",
+      "message": null,
+      "output": "\"Hello from stdout. It is 1900 now\"\n\nHello from stderr\n\n\"       (__)\n `------(oo)\n  ||    (__)\n  ||w--||\"\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lectus. Suspendisse dignissim molestie sagittis. Praesent egestas massa a est maximus iaculis. Morbi varius nulla in purus hendrerit, eget tincidunt diam malesuada. Morbi convallis non ex eget auctor. Aenean massa tellus, maximus a fermentum non, tempor quis sem. Integer finibus tincidunt convallis. Curabitur d"
+    },
+    {
+      "name": "exceptional-century",
+      "test_code": "(should (leap-year-p 2000))",
+      "status": "pass",
+      "message": null,
+      "output": "\"Hello from stdout. It is 2000 now\"\n\nHello from stderr\n\n\"       (__)\n `------(oo)\n  ||    (__)\n  ||w--||\"\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus lectus. Suspendisse dignissim molestie sagittis. Praesent egestas massa a est maximus iaculis. Morbi varius nulla in purus hendrerit, eget tincidunt diam malesuada. Morbi convallis non ex eget auctor. Aenean massa tellus, maximus a fermentum non, tempor quis sem. Integer finibus tincidunt convallis. Curabitur d"
+    }
+  ]
+}

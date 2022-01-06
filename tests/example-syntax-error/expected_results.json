@@ -1,5 +1,37 @@
 {
-  "version": 1,
-  "status": "fail",
-  "message": "Loading /solution/example-syntax-error.el (source)...\nSymbol's value as variable is void: DEF&*@"
+  "version": 2,
+  "status": "error",
+  "message": "Loading /solution/example-syntax-error.el (source)...\r\nSymbol's value as variable is void: DEF&*@\r",
+  "tests": [
+    {
+      "name": "vanilla-leap-year",
+      "test_code": "(should (leap-year-p 1996))",
+      "status": "error",
+      "message": null
+    },
+    {
+      "name": "any-old-year",
+      "test_code": "(should-not (leap-year-p 1997))",
+      "status": "error",
+      "message": null
+    },
+    {
+      "name": "non-leap-even-year",
+      "test_code": "(should-not (leap-year-p 1997))",
+      "status": "error",
+      "message": null
+    },
+    {
+      "name": "century",
+      "test_code": "(should-not (leap-year-p 1900))",
+      "status": "error",
+      "message": null
+    },
+    {
+      "name": "exceptional-century",
+      "test_code": "(should (leap-year-p 2000))",
+      "status": "error",
+      "message": null
+    }
+  ]
 }

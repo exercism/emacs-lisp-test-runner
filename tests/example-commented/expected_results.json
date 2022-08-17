@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "status": "pass",
+  "message": null,
+  "tests": [
+    {
+      "name": "vanilla-leap-year",
+      "test_code": "(should (leap-year-p 1996))",
+      "status": "pass",
+      "message": null
+    }
+  ]
+}

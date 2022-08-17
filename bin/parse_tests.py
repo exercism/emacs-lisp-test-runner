@@ -32,12 +32,14 @@ def parse_test_functions(s: str):
     in the test file
     """
     function_matches = re.finditer(
-        fr"\({TEST_FUNCTION}\s+(?P<name>[\w-]+)\s+\(\)\s*(?P<docstring>\".*\")?\s*(?P<code>(?:\n.+)+)\)",
+        fr"(?P<semicolons>;+)?\s*\({TEST_FUNCTION}\s+(?P<name>[\w-]+)\s+\(\)\s*(?P<docstring>\".*\")?\s*(?P<code>(?:\n.+)+)\)",
         s,
     )
     names = []
     code_pieces = []
     for m in function_matches:
+        if m["semicolons"]:
+            continue
         names.append(m["name"])
         code_pieces.append(m["code"].strip())
     return names, code_pieces

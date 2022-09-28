@@ -5,7 +5,7 @@ RUN apt-get update && \
 
 RUN add-apt-repository ppa:kelleyk/emacs && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y emacs26
+    DEBIAN_FRONTEND=noninteractive apt-get install -y emacs28
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get purge --auto-remove && \

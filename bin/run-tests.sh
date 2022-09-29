@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Synopsis:
 # Test the test runner by running it against a predefined set of solutions
@@ -12,6 +12,8 @@
 # ./bin/run-tests.sh
 
 exit_code=0
+test_success_counter=0
+test_error_counter=0
 
 # Iterate over all test directories
 for test_dir in tests/*; do
@@ -34,8 +36,19 @@ for test_dir in tests/*; do
     diff "${results_file_path}" "${expected_results_file_path}"
 
     if [ $? -ne 0 ]; then
+        echo "${test_dir_name}: ERROR: comparison failed - results.json not matching expected_results.json"
         exit_code=1
+        test_error_counter=$[$test_error_counter + 1]
+    else
+        echo "${test_dir_name}: SUCCESS: results.json is matching expected_results.json"
+        test_success_counter=$[$test_success_counter + 1]
     fi
 done
+
+if [ "${exit_code}" -eq 0 ]; then
+    echo "SUCCESS: All tests passed"
+else
+    echo "ERROR: ${test_error_counter}/${test_success_counter} tests failed"
+fi
 
 exit ${exit_code}

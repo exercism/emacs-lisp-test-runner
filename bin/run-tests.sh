@@ -30,6 +30,7 @@ for test_dir in tests/*; do
       -e "s~${test_dir_path}~/solution~g" \
       -e 's/\*load\*(\-[0-9]+)?//g' \
       -e 's/\([0-9]+\.[0-9]+ sec\)//g' \
+      -e 's/#<bytecode [^>]*>/#<bytecode >/' \
       "${results_file_path}"
 
     echo "${test_dir_name}: comparing results.json to expected_results.json"

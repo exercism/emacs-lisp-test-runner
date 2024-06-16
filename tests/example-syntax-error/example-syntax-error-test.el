@@ -4,7 +4,6 @@
 
 ;;; Code:
 
-(setq backtrace-on-error-noninteractive nil)
 (load-file "example-syntax-error.el")
 
 (ert-deftest vanilla-leap-year ()

@@ -3,7 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-
 (load-file "example-syntax-error.el")
 
 (ert-deftest vanilla-leap-year ()

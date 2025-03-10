@@ -7,31 +7,31 @@
       "name": "vanilla-leap-year",
       "test_code": "(should (leap-year-p 1996))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should\n       (leap-year-p 1996))\n      :form\n      (leap-year-p 1996)\n      :value nil))"
+      "message": "(ert-test-failed\n     ((should (leap-year-p 1996)) :form (leap-year-p 1996) :value nil))"
     },
     {
       "name": "any-old-year",
       "test_code": "(should-not (leap-year-p 1997))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should-not\n       (leap-year-p 1997))\n      :form\n      (leap-year-p 1997)\n      :value t))"
+      "message": "(ert-test-failed\n     ((should-not (leap-year-p 1997)) :form (leap-year-p 1997) :value t))"
     },
     {
       "name": "non-leap-even-year",
       "test_code": "(should-not (leap-year-p 1997))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should-not\n       (leap-year-p 1997))\n      :form\n      (leap-year-p 1997)\n      :value t))"
+      "message": "(ert-test-failed\n     ((should-not (leap-year-p 1997)) :form (leap-year-p 1997) :value t))"
     },
     {
       "name": "century",
       "test_code": "(should-not (leap-year-p 1900))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should-not\n       (leap-year-p 1900))\n      :form\n      (leap-year-p 1900)\n      :value t))"
+      "message": "(ert-test-failed\n     ((should-not (leap-year-p 1900)) :form (leap-year-p 1900) :value t))"
     },
     {
       "name": "exceptional-century",
       "test_code": "(should (leap-year-p 2000))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should\n       (leap-year-p 2000))\n      :form\n      (leap-year-p 2000)\n      :value nil))"
+      "message": "(ert-test-failed\n     ((should (leap-year-p 2000)) :form (leap-year-p 2000) :value nil))"
     }
   ]
 }

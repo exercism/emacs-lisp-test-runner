@@ -31,7 +31,7 @@
       "name": "exceptional-century",
       "test_code": "(should (leap-year-p 2000))",
       "status": "fail",
-      "message": "(ert-test-failed\n     ((should\n       (leap-year-p 2000))\n      :form\n      (leap-year-p 2000)\n      :value nil))"
+      "message": "(ert-test-failed\n     ((should (leap-year-p 2000)) :form (leap-year-p 2000) :value nil))"
     }
   ]
 }

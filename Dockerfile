@@ -1,4 +1,4 @@
-FROM silex/emacs:29.4
+FROM silex/emacs:30.1
 
 RUN apt-get update && \
     apt-get install -y curl jq software-properties-common

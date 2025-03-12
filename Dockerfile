@@ -1,11 +1,13 @@
-FROM silex/emacs:30.1
+FROM silex/emacs:30.1-alpine
 
-RUN apt-get update && \
-    apt-get install -y curl jq software-properties-common
+RUN apk update && \
+    apk add curl \
+            jq \
+            bash \
+            python3 \
+            util-linux
 
-RUN rm -rf /var/lib/apt/lists/* && \
-    apt-get purge --auto-remove && \
-    apt-get clean
+RUN rm /var/cache/apk/*
 
 WORKDIR /opt/test-runner
 COPY . .

@@ -26,7 +26,7 @@ script_dir="$(dirname "$0")"
 input_dir="${2%/}"
 output_dir="${3%/}"
 test_file="${input_dir}/${slug}-test.el"
-test_output_file="$(mktemp --suffix ".out")"
+test_output_file="$(mktemp)"
 results_file="${output_dir}/results.json"
 
 # Create the output directory if it doesn't exist

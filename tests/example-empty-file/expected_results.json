@@ -1,7 +1,7 @@
 {
   "version": 2,
   "status": "error",
-  "message": "Loading /solution/example-empty-file.el (source)...\r\nRunning 5 tests \r\n\r\n5 unexpected results:\r\n   \u001b[01;31m\u001b[KFAILED  any-old-year\r\u001b[m\u001b[K\n   \u001b[01;31m\u001b[KFAILED  century\r\u001b[m\u001b[K\n   \u001b[01;31m\u001b[KFAILED  exceptional-century\r\u001b[m\u001b[K\n   \u001b[01;31m\u001b[KFAILED  non-leap-even-year\r\u001b[m\u001b[K\n   \u001b[01;31m\u001b[KFAILED  vanilla-leap-year\r\u001b[m\u001b[K\n\r",
+  "message": "Loading /solution/example-empty-file.el (source)...\r\nRunning 5 tests \r\n\r\n5 unexpected results:\r\n   FAILED  any-old-year\r\n   FAILED  century\r\n   FAILED  exceptional-century\r\n   FAILED  non-leap-even-year\r\n   FAILED  vanilla-leap-year\r\n\r",
   "tests": [
     {
       "name": "vanilla-leap-year",

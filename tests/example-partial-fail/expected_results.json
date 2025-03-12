@@ -1,7 +1,7 @@
 {
   "version": 2,
   "status": "fail",
-  "message": "Loading /solution/example-partial-fail.el (source)...\r\nRunning 5 tests \r\n\r\n1 unexpected results:\r\n   \u001b[01;31m\u001b[KFAILED  exceptional-century\r\u001b[m\u001b[K\n\r",
+  "message": "Loading /solution/example-partial-fail.el (source)...\r\nRunning 5 tests \r\n\r\n1 unexpected results:\r\n   FAILED  exceptional-century\r\n\r",
   "tests": [
     {
       "name": "vanilla-leap-year",

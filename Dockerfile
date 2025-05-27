@@ -9,6 +9,9 @@ RUN apk update && \
 
 RUN rm /var/cache/apk/*
 
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+
 WORKDIR /opt/test-runner
 COPY . .
 ENTRYPOINT ["/opt/test-runner/bin/run.sh"]

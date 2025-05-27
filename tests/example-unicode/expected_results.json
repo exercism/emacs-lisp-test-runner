@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "status": "pass",
+  "message": null,
+  "tests": [
+    {
+      "name": "no-texts",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (should (hash-table-contains expected (calculate-frequencies '()))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "one-text-with-one-letter",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?a 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"a\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "one-text-with-multiple-letters",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?b 2 expected)\n    (puthash ?c 3 expected)\n    (puthash ?d 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"bbcccd\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "two-texts-with-one-letter",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?e 1 expected)\n    (puthash ?f 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"e\" \"f\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "two-texts-with-multiple-letters",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?g 2 expected)\n    (puthash ?h 3 expected)\n    (puthash ?i 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"ggh\" \"hhi\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "ignore-letter-casing",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?m 2 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"m\" \"M\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "ignore-whitespace",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (should (hash-table-contains expected (calculate-frequencies '(\"   \" \"\\t\" \"\\r\\n\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "ignore-punctuation",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (should (hash-table-contains expected (calculate-frequencies '(\"!\" \"?\" \";\" \",\" \".\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "ignore-numbers",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (should (hash-table-contains expected (calculate-frequencies '(\"1\" \"2\" \"3\" \"4\" \"5\" \"6\" \"7\" \"8\" \"9\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "unicode-letters",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?ø 1 expected)\n    (puthash ?φ 1 expected)\n    (puthash ?ほ 1 expected)\n    (puthash ?本 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"ø\" \"φ\" \"ほ\" \"本\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "combination-of-lower-and-uppercase-letters-punctuation-and-white-space",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?a 32 expected)\n    (puthash ?b 4 expected)\n    (puthash ?c 6 expected)\n    (puthash ?d 14 expected)\n    (puthash ?e 37 expected)\n    (puthash ?f 7 expected)\n    (puthash ?g 8 expected)\n    (puthash ?h 29 expected)\n    (puthash ?i 19 expected)\n    (puthash ?k 6 expected)\n    (puthash ?l 12 expected)\n    (puthash ?m 7 expected)\n    (puthash ?n 19 expected)\n    (puthash ?o 22 expected)\n    (puthash ?p 7 expected)\n    (puthash ?r 17 expected)\n    (puthash ?s 16 expected)\n    (puthash ?t 30 expected)\n    (puthash ?u 9 expected)\n    (puthash ?v 2 expected)\n    (puthash ?w 9 expected)\n    (puthash ?y 4 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"There, peeping among the cloud-wrack above a dark tower high up in the mountains, Sam saw a white star twinkle for a while. The beauty of it smote his heart, as he looked up out of the forsaken land, and hope returned to him. For like a shaft, clear and cold, the thought pierced him that in the end, the shadow was only a small and passing thing: there was light and high beauty forever beyond its reach.\")))))",
+      "status": "pass",
+      "message": null,
+      "output": "passed   1/13  combination-of-lower-and-uppercase-letters-punctuation-and-white-space \n   passed   2/13  ignore-letter-casing \n   passed   3/13  ignore-numbers \n   passed   4/13  ignore-punctuation \n   passed   5/13  ignore-whitespace \n   passed   6/13  large-texts \n   passed   7/13  many-small-texts \n   passed   8/13  no-texts \n   passed   9/13  one-text-with-multiple-letters (0.10642"
+    },
+    {
+      "name": "large-texts",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?a 845 expected)\n    (puthash ?b 155 expected)\n    (puthash ?c 278 expected)\n    (puthash ?d 359 expected)\n    (puthash ?e 1143 expected)\n    (puthash ?f 222 expected)\n    (puthash ?g 187 expected)\n    (puthash ?h 507 expected)\n    (puthash ?i 791 expected)\n    (puthash ?j 12 expected)\n    (puthash ?k 67 expected)\n    (puthash ?l 423 expected)\n    (puthash ?m 288 expected)\n    (puthash ?n 833 expected)\n    (puthash ?o 791 expected)\n    (puthash ?p 197 expected)\n    (puthash ?r 432 expected)\n    (puthash ?q 8 expected)\n    (puthash ?s 700 expected)\n    (puthash ?t 1043 expected)\n    (puthash ?u 325 expected)\n    (puthash ?v 111 expected)\n    (puthash ?w 223 expected)\n    (puthash ?x 7 expected)\n    (puthash ?y 251 expected)\n    (should (hash-table-contains expected (calculate-frequencies (split-string (mapconcat 'identity large-text \"\\n\") \"\\n\")))))",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "many-small-texts",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?a 50 expected)\n    (puthash ?b 100 expected)\n    (puthash ?c 150 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\" \"abbccc\")))))",
+      "status": "pass",
+      "message": null
+    }
+  ]
+}

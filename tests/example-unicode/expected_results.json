@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "status": "pass",
+  "message": null,
+  "tests": [
+    {
+      "name": "unicode-letters",
+      "test_code": "(let ((expected (make-hash-table :test 'equal)))\n    (puthash ?ø 1 expected)\n    (puthash ?φ 1 expected)\n    (puthash ?ほ 1 expected)\n    (puthash ?本 1 expected)\n    (should (hash-table-contains expected (calculate-frequencies '(\"ø\" \"φ\" \"ほ\" \"本\")))))",
+      "status": "pass",
+      "message": null
+    }
+  ]
+}

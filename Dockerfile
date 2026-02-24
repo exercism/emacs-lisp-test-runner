@@ -5,9 +5,8 @@ RUN apk update && \
             jq \
             bash \
             python3 \
-            util-linux
-
-RUN rm /var/cache/apk/*
+            util-linux && \
+    rm /var/cache/apk/*
 
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8

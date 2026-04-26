@@ -1,4 +1,4 @@
-FROM silex/emacs:30.1-alpine
+FROM silex/emacs:30.2-alpine
 
 RUN apk update && \
     apk add curl \
